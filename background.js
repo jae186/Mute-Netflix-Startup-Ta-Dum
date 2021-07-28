@@ -9,6 +9,23 @@ function unmuter(tabId){
         }
 
 
+    
+    chrome.tabs.onUpdated.addListener(function(tabid, changeinfo, tab) {
+        
+            if (changeinfo.status == "complete") {
+                if(tab.url.indexOf("netflix.com/watch/") != -1){
+                    muter(tabid);
+                    setTimeout(function(){ unmuter(tabid) }, 10000);
+                    console.log("hey")
+                }
+        }                                                              }
+       );
+
+
+
+
+
+/*
 chrome.tabs.onUpdated.addListener(function(id, info, tab){
     
         if (tab.status !== "complete"){
@@ -21,9 +38,6 @@ chrome.tabs.onUpdated.addListener(function(id, info, tab){
     }
 })
 
-
-
-/*
 
 if (d.getTime() >= (startTime + 7000)){
     chrome.tabs.onUpdated.addListener((tabId, change, tab) => {
