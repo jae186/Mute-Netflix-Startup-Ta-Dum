@@ -1,7 +1,7 @@
 {
     "manifest_version":3,
-    "name": "Muter",
-    "description": "Mutes",
+    "name": "Mute Netflix Startup Sound 'Ta-Dum",
+    "description": "Mutes the Netflix sound at the beginning of each episode",
     "version": "1.0",
 
     "action":
@@ -12,7 +12,8 @@
     "permissions": [
 		"webNavigation",
 		"tabs",
-        "scripting"
+        "scripting",
+        "storage"
     ],
     "host_permissions": [
         "http://*/",
