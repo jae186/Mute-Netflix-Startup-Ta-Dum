@@ -1,10 +1,26 @@
 
-var theStatus = true; 
+var theStatus;
+
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if (request == true)
+            theStatus = true;
+        else
+            theStatus = false;
+        console.log("background.js got a message")
+        console.log(request);
+        console.log("status is " + theStatus);
+        sendResponse("bar");
+    }
+);
+
 chrome.storage.local.get('enabled', data => {
     if (data.enabled) {
        theStatus = true;
+       console.log(theStatus);
     } else {
         theStatus = false;
+        console.log(theStatus);
     }
 });
 
@@ -23,7 +39,7 @@ function unmuter(tabId){
                 if(tab.url.indexOf("netflix.com/watch/") != -1)  {
                     muter(tabid);
                     console.log("muted")
-                    setTimeout(function(){ unmuter(tabid) }, 10000);
+                    setTimeout(function(){ unmuter(tabid) }, 12000);
                     console.log("unmuted")
                 }
         }}                                                              }
