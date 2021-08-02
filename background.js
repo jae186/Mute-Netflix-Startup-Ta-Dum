@@ -39,7 +39,7 @@ function unmuter(tabId){
                 if(tab.url.indexOf("netflix.com/watch/") != -1)  {
                     muter(tabid);
                     console.log("muted")
-                    setTimeout(function(){ unmuter(tabid) }, 12000);
+                    setTimeout(function(){ unmuter(tabid) }, 8000);
                     console.log("unmuted")
                 }
         }}                                                              }

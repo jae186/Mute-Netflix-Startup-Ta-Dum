@@ -3,7 +3,6 @@
     "name": "Mute Netflix Startup Sound 'Ta-Dum'",
     "description": "Mutes the Netflix sound at the beginning of each episode",
     "version": "1.0",
-    "icons" : ["icon.png"],
 
     "action":
     {
@@ -11,7 +10,6 @@
         "default_popup": "popup.html"
     },
     "permissions": [
-		"webNavigation",
 		"tabs",
         "scripting",
         "storage"
